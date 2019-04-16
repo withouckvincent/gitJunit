@@ -40,4 +40,14 @@ public class RekeningTest {
 		assertEquals(0, BigDecimal.valueOf(3.7).compareTo(rekening.getSaldo()));
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void hetBedragVanEenStortingMagNietNulZijn() {
+		rekening.stort(BigDecimal.ZERO);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void hetBedragVanEenStortingMagNietNegatiefZijn() {
+		rekening.stort(BigDecimal.valueOf(-1));
+	}
+
 }
