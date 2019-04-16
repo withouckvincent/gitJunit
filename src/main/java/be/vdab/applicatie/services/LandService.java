@@ -12,10 +12,15 @@ public class LandService {
 
 	public LandService(LandRepository landRepository) {
 		this.landRepository = landRepository;
+		
 		}
 	
 	
+	
 	public BigDecimal findVerhoudingOppervlakteLandTovOppervlakteAlleLanden(String landcode) {
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		landRepository.read(landcode); // Hier kan ik zogezegd landReposistory gebruiken zonder dat deze af is
+		return BigDecimal.ZERO;
+
 	}
 }
